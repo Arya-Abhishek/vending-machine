@@ -1,6 +1,8 @@
 package org.example.vendingmachine.states
 
 import org.example.vendingmachine.VendingMachine
+import org.example.vendingmachine.entities.UserInput
+import org.example.vendingmachine.inventory.Inventory
 
 class VmIdleState(
     private val vendingMachine: VendingMachine
@@ -8,10 +10,18 @@ class VmIdleState(
 
     override fun insertCoinBtn() {
         println("Right now in IDEAL STATE but going into AWAITING PAYMENT STATE to insert coin")
-        this.vendingMachine.changeState()
+        this.vendingMachine.changeState(VmAwaitingPaymentState(this.vendingMachine))
     }
 
-    override fun insertCoin() {
+    override fun insertCoin(userInput: UserInput) {
+        println("Not supported in this state")
+    }
+
+    override fun selectProductBtn() {
+        println("Not supported in this state")
+    }
+
+    override fun selectProduct(userInput: UserInput) {
         println("Not supported in this state")
     }
 
