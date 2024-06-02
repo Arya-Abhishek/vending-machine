@@ -4,8 +4,6 @@ import org.example.vendingmachine.VendingMachine
 import org.example.vendingmachine.entities.UserInput
 
 fun main() {
-    println("Hello World!")
-
     val vendingMachine = VendingMachine()
 
     // 0. Stock up inventory
