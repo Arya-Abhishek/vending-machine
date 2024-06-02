@@ -33,6 +33,7 @@ class VmSelectionState(
                 }
                 currentProductQuantity == 0 -> {
                     println("Product out of stock")
+                    refund()
                     vendingMachine.changeState(VmIdleState(vendingMachine))
                 }
                 vendingMachine.userInput!!.totalAmount >= currentProduct.price -> {
