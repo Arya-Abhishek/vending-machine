@@ -28,7 +28,7 @@ class VmAwaitingPaymentState(
         println("Not supported in this state")
     }
 
-    override fun refund() {
+    override fun refund(userInput: UserInput) {
         println("Not supported in this state")
     }
 

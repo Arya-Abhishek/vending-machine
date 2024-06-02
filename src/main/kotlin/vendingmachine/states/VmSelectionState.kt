@@ -9,9 +9,11 @@ class VmSelectionState(
     private val inventory: Inventory
 ) : IVmStates {
     override fun insertCoinBtn() {
+        println("Not supported in this state")
     }
 
     override fun insertCoin(userInput: UserInput) {
+        println("Not supported in this state")
     }
 
     override fun selectProductBtn() {
@@ -37,7 +39,7 @@ class VmSelectionState(
                 userInput.totalAmount >= currentProduct.price -> {
                     println("Product dispensed")
                     inventory.updateProductQuantity(productCode, currentProductQuantity - 1)
-                    refund()
+                    refund(userInput)
                     vendingMachine.changeState(VmIdleState(vendingMachine))
                 }
                 else -> {
@@ -52,12 +54,21 @@ class VmSelectionState(
     }
 
     override fun pressCancelBtn() {
+        vendingMachine.userInput ?. let {
+            refund(it)
+        }
+        vendingMachine.changeState(VmIdleState(vendingMachine))
     }
 
-    override fun refund() {
-        // will give refund here
+    override fun refund(userInput: UserInput) {
+        // will give refund here: dispense all user inserted coins
+        println("Refund Total amount: ${userInput.totalAmount}")
+        userInput.coins.map { (coin, qty) ->
+            println("Refund Coin: $coin, Quantity: $qty")
+        }
     }
 
     override fun dispenseProduct() {
+        println("Not supported in this state")
     }
 }

@@ -8,6 +8,6 @@ interface IVmStates {
     fun selectProductBtn()
     fun selectProduct(userInput: UserInput)
     fun pressCancelBtn()
-    fun refund()
+    fun refund(userInput: UserInput)
     fun dispenseProduct()
 }
