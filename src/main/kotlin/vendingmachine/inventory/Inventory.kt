@@ -18,7 +18,9 @@ class Inventory {
     }
 
     fun updateProductQuantity(code: String, quantity: Int) {
-        inventory[code] = Pair(inventory[code]?.first!!, quantity)
+        inventory[code]?.let {
+            inventory[code] = Pair(it.first, quantity)
+        } ?: println("Product code not found: $code")
     }
 
     fun removeProduct(code: String) {
