@@ -24,4 +24,16 @@ class Inventory {
     fun removeProduct(code: String) {
         inventory.remove(code)
     }
+
+    fun displayInventory() {
+        inventory.forEach { (code, product) ->
+            println("Product code: $code | Product name: ${product.first.name} | Product price: ${product.first.price} | Product quantity: ${product.second}")
+        }
+    }
+
+    fun stockUp() {
+        addProduct(Product("101", "Coke", 25), 5)
+        addProduct(Product("102", "Pepsi", 35), 5)
+        addProduct(Product("103", "Soda", 45), 5)
+    }
 }

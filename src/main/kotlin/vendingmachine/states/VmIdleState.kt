@@ -13,7 +13,7 @@ class VmIdleState(
         this.vendingMachine.changeState(VmAwaitingPaymentState(this.vendingMachine))
     }
 
-    override fun insertCoin(userInput: UserInput) {
+    override fun insertCoin() {
         println("Not supported in this state")
     }
 
@@ -21,7 +21,7 @@ class VmIdleState(
         println("Not supported in this state")
     }
 
-    override fun selectProduct(userInput: UserInput) {
+    override fun selectProduct() {
         println("Not supported in this state")
     }
 

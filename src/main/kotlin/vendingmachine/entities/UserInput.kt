@@ -1,7 +1,7 @@
 package org.example.vendingmachine.entities
 
 data class UserInput (
-    val coins: Map<Int, Int>,
+    val coins: Map<Int, Int>,       // <coin value, number of coins>
     var productCode: String ?= null
 ) {
     val totalAmount: Int

@@ -4,10 +4,10 @@ import org.example.vendingmachine.entities.UserInput
 
 interface IVmStates {
     fun insertCoinBtn()
-    fun insertCoin(userInput: UserInput)
+    fun insertCoin()
     fun selectProductBtn()
-    fun selectProduct(userInput: UserInput)
+    fun selectProduct()
     fun pressCancelBtn()
-    fun refund(userInput: UserInput)
+    fun refund()
     fun dispenseProduct()
 }
